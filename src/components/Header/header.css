@@ -1,0 +1,37 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 150px; /* Espaçamento interno */
+    background-color: #fff; /* Fundo do header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para um visual elegante */
+  }
+  
+  .header-button {
+    display: flex;
+    gap: 150px; /* Espaçamento entre os botões */
+  }
+  
+  .header-button button {
+    font-size: 16px;
+    border: 2px solid #ccc; /* Borda do botão */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 10px 80px; /* Espaçamento interno do botão */
+    background-color: #f9f9f9; /* Fundo do botão */
+    cursor: pointer;
+    transition: 0.3s; /* Transição suave ao passar o mouse */
+  }
+  
+  .header-button button:hover {
+    background-color: #e0e0e0; /* Cor ao passar o mouse */
+    border-color: #999;
+  }
+  
+  .header-logo {
+    text-align: center;
+    flex-grow: 1; /* Faz o logo centralizado ocupar espaço entre os botões */
+  }
+  
+  .header-logo img {
+    height: 80px; /* Ajuste a altura do logo */
+  }
