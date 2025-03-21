@@ -1,0 +1,123 @@
+.photo-panel {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .photo-panel-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Quatro colunas */
+    grid-auto-rows: 200px; /* Altura base para cada célula */
+    gap: 20px; /* Espaçamento entre as fotos */
+  }
+  
+  /* Tamanhos específicos para cada tipo de foto */
+  .photo {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .photo.large {
+    grid-column: span 2; /* Ocupa 2 colunas */
+    grid-row: span 2; /* Ocupa 2 linhas */
+  }
+  
+  .photo.medium {
+    grid-column: span 1; /* Ocupa 1 coluna */
+    grid-row: span 2; /* Ocupa 2 linhas */
+  }
+  
+  .photo.large-horizontal {
+    grid-column: span 4; /* Ocupa todas as 4 colunas */
+    grid-row: span 1; /* Ocupa 1 linha */
+  }
+  
+  .photo.small {
+    grid-column: span 1; /* 1 coluna */
+    grid-row: span 1; /* 1 linha */
+  }
+  
+  .photo.large-vertical {
+    grid-column: span 2; /* Ocupa 2 colunas */
+    grid-row: span 2; /* Ocupa 2 linhas */
+  }
+  
+  /* Efeito ao passar o mouse */
+  .photo .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0; /* Invisível por padrão */
+    transition: opacity 0.3s;
+  }
+  
+  .photo:hover .overlay {
+    opacity: 1; /* Overlay visível ao passar o mouse */
+  }
+  
+  /* Botão abaixo do painel */
+  .photo-panel-cta {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .photo-panel-cta button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .photo-panel-cta button:hover {
+    background-color: #ff8787;
+  }
+
+  @media (max-width: 768px) {
+    .photo-panel-grid {
+      grid-template-columns: repeat(2, 1fr); /* Troca para duas colunas */
+    }
+  
+    .photo.large-horizontal {
+      grid-column: span 2; /* Ocupa largura total */
+      grid-row: span 1;
+    }
+  
+    .photo.large {
+      grid-column: span 2;
+    }
+  
+    .photo.large-vertical {
+      grid-column: span 2;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .photo-panel-grid {
+      grid-template-columns: 1fr; /* Apenas uma coluna */
+    }
+  
+    .photo.large,
+    .photo.medium,
+    .photo.large-horizontal,
+    .photo.large-vertical,
+    .photo.small {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+  }
+  

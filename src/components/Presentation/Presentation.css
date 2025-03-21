@@ -1,0 +1,79 @@
+.presentation {
+  display: flex;
+  flex-direction: row; /* Organiza os lados */
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Altura total da tela */
+  background-color: #f9f9f9; /* Cor de fundo clara */
+}
+
+.presentation-gif {
+  flex: 1; /* Ocupa metade da largura */
+  display: flex; /* Usa flexbox para centralizar o GIF */
+  align-items: center; /* Alinha verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  overflow: hidden; /* Evita barras de rolagem */
+  padding: 20px; /* Espaçamento ao redor do GIF */
+}
+
+.presentation-gif img {
+  width: 60%; /* Ajusta o tamanho do GIF */
+  height: auto; /* Mantém a proporção */
+}
+
+.presentation-content {
+  flex: 1; /* Ocupa outra metade da largura */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Texto alinhado à esquerda */
+  color: #333;
+}
+
+.presentation-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.presentation-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  padding: 12px 24px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ff8787;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .presentation {
+    flex-direction: column; /* Empilha o layout */
+  }
+
+  .presentation-gif,
+  .presentation-content {
+    width: 100%; /* Ocupa toda a largura */
+    padding: 20px;
+  }
+
+  .presentation-content {
+    align-items: center; /* Centraliza o texto */
+    text-align: center;
+  }
+
+  .presentation-gif img {
+    width: 80%; /* Aumenta o tamanho do GIF em telas menores */
+  }
+}
