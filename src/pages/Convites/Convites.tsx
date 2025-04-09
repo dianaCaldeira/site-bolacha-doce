@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import './Convites.css';
 
 const Convites: React.FC = () => {
+  const navigate = useNavigate();
   const [principalFilter, setPrincipalFilter] = useState('Todos');
   const [secundariaFilter, setSecundariaFilter] = useState('Todos');
   const [acabamentoFilter, setAcabamentoFilter] = useState('Todos');
@@ -20,78 +22,96 @@ const Convites: React.FC = () => {
     setAcabamentoFilter(filter);
   };
 
+  // Função para navegar para a página de detalhes
+  const handleVerDetalhes = (clientName: string) => {
+    navigate(`/convites/${encodeURIComponent(clientName)}`);
+  };
+
+  // Lista de clientes com seus convites
   const convitesList = [
     { 
-      name: 'Convite Clássico Azul', 
-      principal: 'Clássico', 
-      secundaria: 'Azul', 
+      name: 'Aida e Daniel', 
+      principal: 'Casamento', 
+      secundaria: 'Elegante', 
       acabamento: 'Dourado',
       images: [
-        '/images/convite1.jpg',
-        '/images/convite1-2.jpg',
-        '/images/convite1-3.jpg'
+        '/fotosconvites/Aída e Daniel/AidaDaniel1.jpg',
+        '/fotosconvites/Aída e Daniel/AidaDaniel2.jpg',
+        '/fotosconvites/Aída e Daniel/AidaDaniel3.jpg'
       ],
-      description: 'Convite elegante em tons de azul com acabamento dourado. Perfeito para casamentos sofisticados e eventos formais. Nosso modelo clássico inclui detalhes em dourado que acrescentam um toque de elegância ao design.'
+      description: 'Convite de casamento elegante e sofisticado, com acabamento em detalhes dourados. Personalizado especialmente para Aida e Daniel, refletindo a elegância da união do casal.'
     },
     { 
-      name: 'Convite Moderno com Flores', 
-      principal: 'Moderno', 
-      secundaria: 'Flores', 
+      name: 'Alice e Victor', 
+      principal: 'Casamento', 
+      secundaria: 'Moderno', 
       acabamento: 'Metalizado',
       images: [
-        '/images/convite2.jpg',
-        '/images/convite2-2.jpg',
-        '/images/convite2-3.jpg'
+        '/fotosconvites/Alice e Victor/AliceVictor1.jpg',
+        '/fotosconvites/Alice e Victor/AliceVictor2.jpg',
+        '/fotosconvites/Alice e Victor/AliceVictor3.jpg'
       ],
-      description: 'Design moderno com flores e acabamento metalizado. Ideal para eventos contemporâneos e celebrações com tema floral. O acabamento metalizado dá um brilho especial que impressiona os convidados.'
+      description: 'Design moderno com toques metalizados, criado exclusivamente para o casamento de Alice e Victor. Um convite que combina elegância contemporânea com detalhes personalizados.'
     },
     { 
-      name: 'Convite Tradicional Verde', 
-      principal: 'Tradicional', 
-      secundaria: 'Verde', 
-      acabamento: 'Vegetal',
+      name: 'Ana Carolina', 
+      principal: 'Aniversário', 
+      secundaria: 'Floral', 
+      acabamento: 'Papel especial',
       images: [
-        '/images/convite3.jpg',
-        '/images/convite3-2.jpg',
-        '/images/convite3-3.jpg'
+        '/fotosconvites/Ana Carolina/AnaCarolina1.jpg',
+        '/fotosconvites/Ana Carolina/AnaCarolina2.jpg',
+        '/fotosconvites/Ana Carolina/AnaCarolina3.jpg'
       ],
-      description: 'Convite tradicional em papel vegetal com estampa verde. Uma escolha consciente para quem valoriza a sustentabilidade sem abrir mão da qualidade e beleza.'
+      description: 'Convite de aniversário com delicado design floral em papel especial. Criado para Ana Carolina, traz elementos que refletem sua personalidade e o tom da celebração.'
     },
     { 
-      name: 'Convite com Estampa Aquarela', 
-      principal: 'Estampa', 
-      secundaria: 'Aquarela', 
-      acabamento: 'Lacre de cera',
+      name: 'Ana Carolina e Filipi', 
+      principal: 'Casamento', 
+      secundaria: 'Romântico', 
+      acabamento: 'Laço de fita',
       images: [
-        '/images/convite4.jpg',
-        '/images/convite4-2.jpg',
-        '/images/convite4-3.jpg'
+        '/fotosconvites/Ana Carolina e Filipi/AnaCarolinaFilipi1.jpg',
+        '/fotosconvites/Ana Carolina e Filipi/AnaCarolinaFilipi2.jpg',
+        '/fotosconvites/Ana Carolina e Filipi/AnaCarolinaFilipi3.jpg'
       ],
-      description: 'Belo convite com estampa em aquarela, finalizado com lacre de cera. Uma opção artística e elegante para ocasiões especiais.'
+      description: 'Convite romântico finalizado com delicado laço de fita. Especialmente desenhado para o casamento de Ana Carolina e Filipi, transmitindo a essência de amor e união.'
     },
     { 
-      name: 'Convite Virtual Rosa', 
-      principal: 'Virtual', 
-      secundaria: 'Rosa', 
-      acabamento: 'Brilho',
-      images: [
-        '/images/convite5.jpg',
-        '/images/convite5-2.jpg',
-        '/images/convite5-3.jpg'
-      ],
-      description: 'Convite digital em tons de rosa com efeito de brilho. Prático, econômico e sustentável, ideal para eventos modernos.'
-    },
-    { 
-      name: 'Convite Minimalista', 
-      principal: 'Moderno', 
+      name: 'Ana Luisa e Samuel', 
+      principal: 'Casamento', 
       secundaria: 'Minimalista', 
       acabamento: 'Relevo seco',
       images: [
-        '/images/convite6.jpg',
-        '/images/convite6-2.jpg',
-        '/images/convite6-3.jpg'
+        '/fotosconvites/Ana Luisa e Samuel/AnaLuisaSamuel1.jpg',
+        '/fotosconvites/Ana Luisa e Samuel/AnaLuisaSamuel2.jpg',
+        '/fotosconvites/Ana Luisa e Samuel/AnaLuisaSamuel3.jpg'
       ],
-      description: 'Design minimalista moderno com técnica de relevo seco. Elegância na simplicidade, perfeito para eventos sofisticados.'
+      description: 'Design minimalista com técnica de relevo seco. Criado para o casamento de Ana Luisa e Samuel, reflete a elegância na simplicidade que o casal tanto aprecia.'
+    },
+    { 
+      name: 'Ana Luiza e Fernando', 
+      principal: 'Casamento', 
+      secundaria: 'Clássico', 
+      acabamento: 'Dourado',
+      images: [
+        '/fotosconvites/Ana Luiza e Fernando/AnaLuizaFernando1.jpg',
+        '/fotosconvites/Ana Luiza e Fernando/AnaLuizaFernando2.jpg',
+        '/fotosconvites/Ana Luiza e Fernando/AnaLuizaFernando3.jpg'
+      ],
+      description: 'Convite clássico com requintados detalhes em dourado. Idealizado para Ana Luiza e Fernando, transmite a formalidade e elegância que marcará a união do casal.'
+    },
+    { 
+      name: 'Andressa e Caio', 
+      principal: 'Casamento', 
+      secundaria: 'Rústico', 
+      acabamento: 'Cordão',
+      images: [
+        '/fotosconvites/Andressa e Caio/AndressaCaio1.jpg',
+        '/fotosconvites/Andressa e Caio/AndressaCaio2.jpg',
+        '/fotosconvites/Andressa e Caio/AndressaCaio3.jpg'
+      ],
+      description: 'Convite com estilo rústico finalizado com cordão natural. Criado especialmente para Andressa e Caio, combina perfeitamente com a proposta do casamento ao ar livre.'
     }
   ];
 
@@ -103,14 +123,19 @@ const Convites: React.FC = () => {
     );
   };
 
+  useEffect(() => {
+    // Atualizar as opções de filtro com base nos convites disponíveis
+    // Você pode implementar isso se quiser opções de filtro dinâmicas
+  }, []);
+
   return (
     <div className="page-container">
       <Header />
       <div className="convites-content">
         <h1>Nossos Convites</h1>
         <p>
-          Explore os modelos exclusivos de convites que oferecemos. Temos opções para
-          casamentos, aniversários, eventos e muito mais!
+          Explore os convites que já criamos para nossos clientes. Cada um é único e personalizado,
+          refletindo as características especiais de cada ocasião.
         </p>
         <div className="filter-section">
           <div className="filter-group">
@@ -119,12 +144,12 @@ const Convites: React.FC = () => {
               value={principalFilter}
               onChange={(e) => handlePrincipalChange(e.target.value)}
             >
-              <option value="Todos">Principais</option>
-              <option value="Clássico">Clássico</option>
-              <option value="Moderno">Moderno</option>
-              <option value="Tradicional">Tradicional</option>
-              <option value="Estampa">Estampa</option>
-              <option value="Virtual">Virtual</option>
+              <option value="Todos">Tipos</option>
+              <option value="Casamento">Casamento</option>
+              <option value="Aniversário">Aniversário</option>
+              <option value="Formatura">Formatura</option>
+              <option value="Batizado">Batizado</option>
+              <option value="15 Anos">15 Anos</option>
             </select>
           </div>
 
@@ -134,15 +159,14 @@ const Convites: React.FC = () => {
               value={secundariaFilter}
               onChange={(e) => handleSecundariaChange(e.target.value)}
             >
-              <option value="Todos">Secundárias</option>
-              <option value="Cor">Cor</option>
-              <option value="Azul">Azul</option>
-              <option value="Verde">Verde</option>
-              <option value="Rosa">Rosa</option>
-              <option value="Ilustração">Ilustração</option>
-              <option value="Flores">Flores</option>
-              <option value="Aquarela">Aquarela</option>
+              <option value="Todos">Estilos</option>
+              <option value="Clássico">Clássico</option>
+              <option value="Moderno">Moderno</option>
+              <option value="Rústico">Rústico</option>
+              <option value="Elegante">Elegante</option>
               <option value="Minimalista">Minimalista</option>
+              <option value="Romântico">Romântico</option>
+              <option value="Floral">Floral</option>
             </select>
           </div>
 
@@ -155,11 +179,10 @@ const Convites: React.FC = () => {
               <option value="Todos">Acabamentos</option>
               <option value="Dourado">Dourado</option>
               <option value="Metalizado">Metalizado</option>
-              <option value="Brilho">Brilho</option>
-              <option value="Vegetal">Vegetal</option>
-              <option value="Lacre de cera">Lacre de cera</option>
-              <option value="Ponteira">Ponteira</option>
+              <option value="Papel especial">Papel especial</option>
+              <option value="Laço de fita">Laço de fita</option>
               <option value="Relevo seco">Relevo seco</option>
+              <option value="Cordão">Cordão</option>
             </select>
           </div>
         </div>
@@ -180,8 +203,12 @@ const Convites: React.FC = () => {
                     >
                       <div 
                         className="convite-image" 
-                        style={{ backgroundImage: `url(${image})` }}
-                      ></div>
+                        style={{ backgroundImage: `url(${encodeURI(image)})` }}
+                      >
+                        <div className="image-error-fallback">
+                          Convite
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -196,7 +223,12 @@ const Convites: React.FC = () => {
                       <span className="tag">{convite.acabamento}</span>
                     </div>
                     
-                    <button className="view-details">Saiba Mais</button>
+                    <button 
+                      className="view-details"
+                      onClick={() => handleVerDetalhes(convite.name)}
+                    >
+                      Saiba Mais
+                    </button>
                   </div>
                 </div>
               </div>
