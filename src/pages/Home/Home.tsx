@@ -1,4 +1,5 @@
 import React from 'react';
+import './Home.css';
 import Header from '../../components/Header/Header';
 import Presentation from '../../components/Presentation/Presentation';
 import PhotoPanel from '../../components/PhotoPanel/PhotoPanel';
@@ -8,7 +9,7 @@ import Footer from '../../components/Footer/Footer';
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <div className="page-container">
       <Header />
       <Presentation />
       <PhotoPanel />

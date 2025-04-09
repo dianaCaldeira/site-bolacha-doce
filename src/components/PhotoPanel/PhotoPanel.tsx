@@ -3,30 +3,51 @@ import './PhotoPanel.css';
 
 const PhotoPanel: React.FC = () => {
   return (
-    <section className="photo-panel">
-      <div className="photo-panel-grid">
-        {/* Linha 1: Grande à esquerda e duas médias à direita */}
-        <div className="photo large" style={{ backgroundImage: "url('/images/photo1.jpg')" }}>
-          <div className="overlay">
+    /* Seção de convites - apenas esta parte deve permanecer */
+    <section className="photos-grid-section">
+      <div className="photos-container">
+        {/* Grande quadrado à esquerda com "Convites" */}
+        <div className="feature-box">
+          <div className="feature-content">
             <span>Convites</span>
           </div>
         </div>
-        <div className="photo medium" style={{ backgroundImage: "url('/images/photo2.jpg')" }}></div>
-        <div className="photo medium" style={{ backgroundImage: "url('/images/photo3.jpg')" }}></div>
-
-        {/* Linha 2: Grande horizontal */}
-        <div className="photo large-horizontal" style={{ backgroundImage: "url('/images/photo4.jpg')" }}></div>
-
-        {/* Linha 3: Três pequenas à esquerda e uma grande vertical à direita */}
-        <div className="photo small" style={{ backgroundImage: "url('/images/photo5.jpg')" }}></div>
-        <div className="photo small" style={{ backgroundImage: "url('/images/photo6.jpg')" }}></div>
-        <div className="photo small" style={{ backgroundImage: "url('/images/photo7.jpg')" }}></div>
-        <div className="photo large-vertical" style={{ backgroundImage: "url('/images/photo8.jpg')" }}></div>
+        
+        {/* Grid de imagens à direita */}
+        <div className="grid-images-container">
+          <div className="grid-box-1">
+            <div className="grid-item"></div>
+          </div>
+          
+          <div className="grid-box-2">
+            <div className="grid-item"></div>
+          </div>
+          
+          <div className="grid-box-3">
+            <div className="grid-item"></div>
+          </div>
+          
+          <div className="grid-box-4">
+            <div className="grid-item"></div>
+          </div>
+          
+          <div className="grid-box-5">
+            <div className="grid-item"></div>
+          </div>
+          
+          <div className="grid-box-6">
+            <div className="grid-item"></div>
+          </div>
+          
+          <div className="grid-box-7">
+            <div className="grid-item"></div>
+          </div>
+        </div>
       </div>
-
-      {/* Botão abaixo */}
-      <div className="photo-panel-cta">
-        <button>Vamos Criar Seu Convite?</button>
+      
+      {/* Botão centralizado abaixo */}
+      <div className="action-button-container">
+        <button className="action-button">Vamos Criar Seu Convite?</button>
       </div>
     </section>
   );

@@ -1,9 +1,11 @@
 .footer-container {
     background-color: #fce6d4; /* Fundo cor de pêssego */
-    padding: 20px 50px; /* Espaçamento interno */
+    padding: 20px 0; /* Removido padding lateral */
     display: flex;
     justify-content: center; /* Centraliza os conteúdos */
     align-items: center;
+    width: 100%; /* Garante que ocupe toda a largura */
+    margin: 0; /* Remove qualquer margem */
   }
   
   .footer-content {
@@ -14,6 +16,7 @@
     width: 100%;
     max-width: 1200px; /* Para limitar a largura do conteúdo */
     gap: 30px; /* Espaçamento entre colunas */
+    padding: 0 50px; /* Adiciona padding interno ao conteúdo */
   }
   
   .footer-logo img {

@@ -1,123 +1,469 @@
 .photo-panel {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-  }
-  
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.photo-panel-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.photo-panel-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.photo-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 200px);
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+/* Tamanhos específicos para cada tipo de foto */
+.photo {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Grande - ocupa 2x2 */
+.photo.large {
+  grid-column: 1 / 3; /* Ocupa colunas 1 e 2 */
+  grid-row: 1 / 3; /* Ocupa linhas 1 e 2 */
+}
+
+/* Médio horizontal - ocupa 1x1 */
+.photo.medium-horizontal {
+  grid-column: 3 / 4; /* Ocupa coluna 3 */
+  grid-row: 1 / 2; /* Ocupa linha 1 */
+}
+
+/* Pequeno - ocupa 1x1 */
+.photo.small {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* Médio vertical - ocupa 1x2 */
+.photo.medium-vertical {
+  grid-column: 3 / 4; /* Ocupa coluna 3 */
+  grid-row: 2 / 4; /* Ocupa linhas 2 e 3 */
+}
+
+/* Médio - ocupa 1x1 */
+.photo.medium {
+  grid-column: 2 / 3; /* Ocupa coluna 2 */
+  grid-row: 3 / 4; /* Ocupa linha 3 */
+}
+
+/* Posicionamento específico para cada foto */
+.photo:nth-child(3) {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+/* Overlay com o título */
+.photo .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.photo:hover .overlay {
+  opacity: 1;
+}
+
+.overlay span {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+
+/* Botão abaixo do painel */
+.photo-panel-cta {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.photo-panel-cta button {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.photo-panel-cta button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
   .photo-panel-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Quatro colunas */
-    grid-auto-rows: 200px; /* Altura base para cada célula */
-    gap: 20px; /* Espaçamento entre as fotos */
-  }
-  
-  /* Tamanhos específicos para cada tipo de foto */
-  .photo {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 180px);
   }
   
   .photo.large {
-    grid-column: span 2; /* Ocupa 2 colunas */
-    grid-row: span 2; /* Ocupa 2 linhas */
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+  
+  .photo.medium-horizontal {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+  
+  .photo.small:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+  
+  .photo.small:nth-child(4) {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+  
+  .photo.medium-vertical {
+    grid-column: 2 / 3;
+    grid-row: 4 / 6;
   }
   
   .photo.medium {
-    grid-column: span 1; /* Ocupa 1 coluna */
-    grid-row: span 2; /* Ocupa 2 linhas */
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
   }
-  
-  .photo.large-horizontal {
-    grid-column: span 4; /* Ocupa todas as 4 colunas */
-    grid-row: span 1; /* Ocupa 1 linha */
-  }
-  
-  .photo.small {
-    grid-column: span 1; /* 1 coluna */
-    grid-row: span 1; /* 1 linha */
-  }
-  
-  .photo.large-vertical {
-    grid-column: span 2; /* Ocupa 2 colunas */
-    grid-row: span 2; /* Ocupa 2 linhas */
-  }
-  
-  /* Efeito ao passar o mouse */
-  .photo .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    opacity: 0; /* Invisível por padrão */
-    transition: opacity 0.3s;
-  }
-  
-  .photo:hover .overlay {
-    opacity: 1; /* Overlay visível ao passar o mouse */
-  }
-  
-  /* Botão abaixo do painel */
-  .photo-panel-cta {
-    margin-top: 30px;
-    text-align: center;
-  }
-  
-  .photo-panel-cta button {
-    padding: 12px 24px;
-    font-size: 1rem;
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .photo-panel-cta button:hover {
-    background-color: #ff8787;
-  }
+}
 
-  @media (max-width: 768px) {
-    .photo-panel-grid {
-      grid-template-columns: repeat(2, 1fr); /* Troca para duas colunas */
-    }
-  
-    .photo.large-horizontal {
-      grid-column: span 2; /* Ocupa largura total */
-      grid-row: span 1;
-    }
-  
-    .photo.large {
-      grid-column: span 2;
-    }
-  
-    .photo.large-vertical {
-      grid-column: span 2;
-    }
+@media (max-width: 576px) {
+  .photo-panel-title {
+    font-size: 2rem;
   }
   
-  @media (max-width: 480px) {
-    .photo-panel-grid {
-      grid-template-columns: 1fr; /* Apenas uma coluna */
-    }
-  
-    .photo.large,
-    .photo.medium,
-    .photo.large-horizontal,
-    .photo.large-vertical,
-    .photo.small {
-      grid-column: span 1;
-      grid-row: span 1;
-    }
+  .photo-panel-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 200px);
+    gap: 10px;
   }
+  
+  .photo.large,
+  .photo.medium-horizontal,
+  .photo.small,
+  .photo.medium-vertical,
+  .photo.medium {
+    grid-column: 1;
+    grid-row: span 1;
+  }
+}
+
+/* Seção de apresentação */
+.presentation-section {
+  padding: 40px 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.presentation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.presentation-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  border: 1px solid #ddd;
+  position: relative;
+}
+
+.presentation-note {
+  background-color: #ffeeba;
+  padding: 15px;
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.presentation-text {
+  padding: 20px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.presentation-text p {
+  margin-bottom: 15px;
+}
+
+.view-more-button {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.animation-box {
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+}
+
+.animation-content {
+  background-color: #ffeeba;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Seção de convites */
+.convites-showcase {
+  padding: 30px 20px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.convites-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.convite-feature {
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+}
+
+.convite-feature-content {
+  background-color: #ffeeba;
+  padding: 30px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.convite-grid-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.convite-item {
+  border: 1px solid #ddd;
+  min-height: 100px;
+}
+
+.convites-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.convites-cta button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .presentation-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .convites-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .convite-grid-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .convite-grid-items {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Seção do grid de fotos */
+.photos-grid-section {
+  padding: 30px 20px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.photos-container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Box de destaque com "Convites" */
+.feature-box {
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.feature-content {
+  background-color: #ffeeba;
+  padding: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Área do grid à direita */
+.grid-images-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 80px);
+  gap: 10px;
+}
+
+/* Itens do grid com tamanhos específicos */
+.grid-box-1 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  border: 1px solid #ddd;
+}
+
+.grid-box-2 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  border: 1px solid #ddd;
+}
+
+.grid-box-3 {
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+  border: 1px solid #ddd;
+}
+
+.grid-box-4 {
+  grid-column: 1 / 4;
+  grid-row: 3 / 5;
+  border: 1px solid #ddd;
+}
+
+.grid-box-5 {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  border: 1px solid #ddd;
+}
+
+.grid-box-6 {
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+  border: 1px solid #ddd;
+}
+
+.grid-box-7 {
+  grid-column: 4 / 5;
+  grid-row: 3 / 5;
+  border: 1px solid #ddd;
+}
+
+.grid-item {
+  width: 100%;
+  height: 100%;
+}
+
+/* Botão de ação */
+.action-button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.action-button {
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .photos-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-images-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .grid-box-1, .grid-box-2, .grid-box-3, 
+  .grid-box-4, .grid-box-5, .grid-box-6, .grid-box-7 {
+    grid-column: span 1;
+    grid-row: auto;
+    min-height: 120px;
+  }
+  
+  .grid-box-4 {
+    grid-column: 1 / 3;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid-images-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-box-1, .grid-box-2, .grid-box-3, 
+  .grid-box-4, .grid-box-5, .grid-box-6, .grid-box-7 {
+    grid-column: 1;
+    min-height: 100px;
+  }
+}
   

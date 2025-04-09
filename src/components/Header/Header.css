@@ -2,14 +2,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 150px; /* Espaçamento interno */
-    background-color: #fff; /* Fundo do header */
+    padding: 10px 0; /* Removido padding lateral */
+    background-color: #fce6d4; /* Mesmo fundo do footer */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para um visual elegante */
+    width: 100%; /* Garante que ocupe toda a largura */
+    margin: 0; /* Remove qualquer margem */
   }
   
   .header-button {
     display: flex;
     gap: 150px; /* Espaçamento entre os botões */
+    padding: 0 150px; /* Adicionado padding lateral */
   }
   
   .header-button button {
