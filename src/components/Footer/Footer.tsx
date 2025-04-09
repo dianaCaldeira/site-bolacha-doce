@@ -13,20 +13,13 @@ const Footer: React.FC = () => {
 
         {/* Texto informativo */}
         <div className="footer-text">
-          <p>
-            A Bolacha Doce trabalha com hora agendada. Reserve um espaço no seu
-            dia para falar sobre você e seus planos e descobrir um universo de
-            possibilidades para cada um deles.
-          </p>
+          <p>Reserve um espaço no seu dia para falar sobre você e seus planos e descobrir um universo criativo de possibilidades.</p>
           <p>Esperamos você.</p>
         </div>
 
         {/* Contato e Redes Sociais */}
         <div className="footer-contact">
-          <p>
-            RUA ESPÍRITO SANTO, 2700, LOJA 3 <br />
-            LOURDES • BH • MG
-          </p>
+          <p>Lourdes . Belo Horizonte . MG</p>
           <p>+55 31 3017 3101</p>
           <p>CONTATO@BOLACHADOCE.COM.BR</p>
           <div className="footer-socials">
