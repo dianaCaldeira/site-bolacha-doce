@@ -289,3 +289,32 @@
 .saiba-mais-section {
   display: none;
 }
+
+.image-error-fallback {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f2e4;
+  color: #333;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.convite-image:not([style*="url"]), 
+.convite-image[style*="url('')"], 
+.convite-image[style*='url("")'] {
+  background-color: #f8f2e4 !important;
+}
+
+.convite-image:not([style*="url"]) .image-error-fallback, 
+.convite-image[style*="url('')"] .image-error-fallback, 
+.convite-image[style*='url("")'] .image-error-fallback {
+  display: flex;
+}
