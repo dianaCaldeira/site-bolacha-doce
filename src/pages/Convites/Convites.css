@@ -61,19 +61,22 @@
 }
 
 .filter-search-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
+  background-color: #fce6d4;
+  color: #5f4b3b;
+  border: 2px solid #fce6d4;
   padding: 12px 30px;
   border-radius: 30px;
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .filter-search-button:hover {
-  background-color: #0056b3;
+  background-color: white;
+  color: #5f4b3b;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(252, 230, 212, 0.4);
 }
 
 .convites-list {
@@ -221,20 +224,23 @@
 
 /* Botão Saiba Mais */
 .view-details {
-  background-color: #007bff;
-  color: white;
-  border: none;
+  background-color: #fce6d4;
+  color: #5f4b3b;
+  border: 2px solid #fce6d4;
   padding: 12px 25px;
   border-radius: 30px;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   align-self: flex-start;
   margin-top: auto;
 }
 
 .view-details:hover {
-  background-color: #0056b3;
+  background-color: white;
+  color: #5f4b3b;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(252, 230, 212, 0.4);
 }
 
 .no-results {

@@ -16,18 +16,23 @@
   }
   
   .header-button button {
-    font-size: 16px;
-    border: 2px solid #ccc; /* Borda do botão */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 10px 80px; /* Espaçamento interno do botão */
-    background-color: #f9f9f9; /* Fundo do botão */
+    font-size: 18px;
+    background-color: #fce6d4;
+    color: #5f4b3b;
+    border: 2px solid #fce6d4;
+    border-radius: 30px;
+    padding: 12px 80px;
     cursor: pointer;
-    transition: 0.3s; /* Transição suave ao passar o mouse */
+    transition: all 0.3s ease;
+    font-weight: 600;
   }
   
   .header-button button:hover {
-    background-color: #e0e0e0; /* Cor ao passar o mouse */
-    border-color: #999;
+    background-color: white;
+    color: #5f4b3b;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(252, 230, 212, 0.4);
+    border-color: #fce6d4;
   }
   
   .header-logo {

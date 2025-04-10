@@ -155,18 +155,22 @@
 }
 
 .cta-button {
-  padding: 8px 20px;
-  font-size: 0.9rem;
-  background-color: #f8f9fa;
-  border: 1px solid #ddd;
-  border-radius: 20px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  background-color: #fce6d4;
+  color: #5f4b3b;
+  border: 2px solid #fce6d4;
+  border-radius: 30px;
   cursor: pointer;
-  color: #333;
-  font-weight: bold;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .cta-button:hover {
-  background-color: #e9ecef;
+  background-color: white;
+  color: #5f4b3b;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(252, 230, 212, 0.4);
 }
 
 /* Responsividade */

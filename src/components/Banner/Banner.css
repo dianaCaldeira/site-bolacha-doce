@@ -26,18 +26,22 @@
   
   .banner-cta {
     align-self: flex-start;
-    padding: 12px 24px;
-    font-size: 1rem;
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background-color: #fce6d4;
+    color: #5f4b3b;
+    border: 2px solid #fce6d4;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    font-weight: 500;
   }
   
   .banner-cta:hover {
-    background-color: #ff8787;
+    background-color: white;
+    color: #5f4b3b;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(252, 230, 212, 0.4);
   }
   
   .banner-image {
