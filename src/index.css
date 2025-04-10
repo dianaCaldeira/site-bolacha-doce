@@ -1,3 +1,77 @@
+/* Definição da fonte TTsars (principal - para títulos) */
+@font-face {
+  font-family: 'TTsars';
+  src: url('/fontes/ttSarsA/TTTsarsA-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTsars';
+  src: url('/fontes/ttSarsA/TTTsarsA-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTsars';
+  src: url('/fontes/ttSarsA/TTTsarsA-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTsars';
+  src: url('/fontes/ttSarsA/TTTsarsA-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Definição da fonte Gotham (secundária - para textos) */
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fontes/gothan/Gotham-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fontes/gothan/Gotham-BookItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fontes/gothan/Gotham-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fontes/gothan/Gotham-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fontes/gothan/Gotham-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Reset de estilos para garantir consistência entre navegadores */
 * {
   box-sizing: border-box;
@@ -12,9 +86,14 @@ html, body {
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Gotham', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'TTsars', serif;
+  font-weight: normal;
 }
 
 #root {
