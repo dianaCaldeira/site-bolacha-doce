@@ -66,16 +66,21 @@
   }
   
   .buttons button {
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    background-color: #fce6d4;
+    color: #5f4b3b;
+    border: 2px solid #fce6d4;
+    border-radius: 30px;
     cursor: pointer;
-    background-color: #fdfaf6;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    font-weight: 500;
   }
   
   .buttons button:hover {
-    background-color: #eee;
+    background-color: white;
+    color: #5f4b3b;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(252, 230, 212, 0.4);
   }
   
