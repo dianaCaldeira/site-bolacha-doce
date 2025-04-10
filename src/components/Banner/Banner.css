@@ -16,12 +16,15 @@
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 20px;
+    font-family: 'TTsars', serif;
+    font-weight: normal;
   }
   
   .banner-content p {
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 30px;
+    font-family: 'Gotham', Arial, sans-serif;
   }
   
   .banner-cta {
@@ -35,6 +38,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
+    font-family: 'Gotham', Arial, sans-serif;
   }
   
   .banner-cta:hover {

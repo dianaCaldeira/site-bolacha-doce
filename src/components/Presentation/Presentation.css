@@ -32,14 +32,17 @@
 }
 
 .presentation-content h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
+  font-family: 'TTsars', serif;
+  font-weight: normal;
 }
 
 .presentation-content p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 20px;
+  font-family: 'Gotham', Arial, sans-serif;
 }
 
 .cta-button {
@@ -52,6 +55,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;
+  font-family: 'Gotham', Arial, sans-serif;
 }
 
 .cta-button:hover {

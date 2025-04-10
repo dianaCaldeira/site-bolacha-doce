@@ -47,16 +47,19 @@
   }
   
   .info-container h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 15px;
     color: #333;
+    font-family: 'TTsars', serif;
+    font-weight: normal;
   }
   
   .info-container p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #555;
     line-height: 1.6;
     margin-bottom: 20px;
+    font-family: 'Gotham', Arial, sans-serif;
   }
   
   /* Botões */
@@ -75,6 +78,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
+    font-family: 'Gotham', Arial, sans-serif;
   }
   
   .buttons button:hover {
