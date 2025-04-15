@@ -18,8 +18,8 @@
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.8s ease-in-out;
-  --max-width: 1200px;
-  --content-padding: 20px;
+  --max-width: 1500px;
+  --content-padding: 10px;
   --font-primary: 'TTsars', serif;
   --font-secondary: 'Gotham', Arial, sans-serif;
 }
